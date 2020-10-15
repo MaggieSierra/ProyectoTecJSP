@@ -9,6 +9,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Sabana - Tecnm </title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 	<%

@@ -63,7 +63,7 @@
 		<table border='1' width='100%' class='table table-bordered'>
          <tbody>
 			<tr>
-				<th     width="250px">Nombre del Maestro</th>
+				<th width="250px">Nombre del Maestro</th>
 				<td><c:if test="${ busqueda != 0}">${usuario.getPrefijo()} ${usuario.getPrimer_apellido()} ${usuario.getSegundo_apellido()} ${usuario.getNombre()}</c:if></td>
 			</tr>
 			<tr>

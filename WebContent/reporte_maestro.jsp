@@ -29,11 +29,8 @@
 				List<Horario> list = HorarioDAO.getHorarioByIdUser(id_user); 
 				request.setAttribute("usuario",usuario);
 				request.setAttribute("list",list);
-				Iterator it = list.iterator();
-				while(it.hasNext())
-					  System.out.println(it.next());
 	%>
-	<div class="container">
+	<div class="container" style="margin-top: 20px;">
 		<ul class='nav nav-tabs'>
 			<li class='nav-item'><a class='nav-link' href='index.jsp'>Inicio</a></li>
 			<li class="nav-item"><a class="nav-link active" href="reporte_maestro.jsp">Reportes</a></li>

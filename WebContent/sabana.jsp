@@ -7,6 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>Sabana - Tecnm</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 	<%	HttpSession session_user=request.getSession();    
@@ -53,6 +54,7 @@
 	    </div>
 	 </div>
 	 <div class="container-fluid">
+	 	<div class="table-responsive">
 		<table border='1' width='100%' class='table'>  
 		<thead class='thead-dark'>
 			<tr>
@@ -64,10 +66,10 @@
 				<th>Maestro</th>
 				<th>Periodo</th>
 				<th>Turno</th>
-				<th>Grupo</th>
-				<th>Alumnos</th>
-				<th>Semestre</th>
-				<th>Creditos</th>
+				<th><p class="verticalText">Grupo</p></th>
+				<th><p class="verticalText">Alumnos</p></th>
+				<th><p class="verticalText">Semestre</p></th>
+				<th><p class="verticalText">Creditos</p></th>
 				<th>Lunes</th>
 				<th>Martes</th>
 				<th>Miercoles</th>
@@ -111,6 +113,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+	</div>
 	</div>
 	<%} }%>
 </body>
