@@ -16,6 +16,10 @@
 	margin-bottom: 20px;
 }
 
+.nav-link{
+	font-weight:bold!important;
+}
+
 .verticalText{
 	writing-mode: vertical-lr!important;
 	transform: rotate(180deg)!important;

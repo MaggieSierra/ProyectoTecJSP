@@ -41,7 +41,7 @@
 		</ul>
 		<br>
 		<div class="col-12" style="text-align: center;">
-			<h1>Bienvenido ${nombre}</h1>
+			<h2>Bienvenido ${nombre}</h2>
 			<img src="assets/img/logo_tec.png">
 		</div>
 		
