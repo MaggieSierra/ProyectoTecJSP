@@ -54,7 +54,6 @@
 	    </div>
 	 </div>
 	 <div class="container-fluid">
-	 	<div class="table-responsive">
 		<table border='1' width='100%' class='table'>  
 		<thead class='thead-dark'>
 			<tr>
@@ -113,7 +112,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-	</div>
 	</div>
 	<%} }%>
 </body>
