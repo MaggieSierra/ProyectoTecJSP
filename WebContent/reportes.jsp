@@ -7,6 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>Reportes - Tecnm</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 	<%	HttpSession session_user=request.getSession();    
@@ -37,11 +38,11 @@
 				request.setAttribute("busqueda",busqueda);
 	%>
 	<div class="container">
-		<ul class='nav nav-tabs'>
+		<ul class='nav nav-tabs' style="margin-top: 20px;">
 			<li class='nav-item'><a class='nav-link' href='index.jsp'>Inicio</a></li>
 			<li class="nav-item"><a class="nav-link" href="materias.jsp">Materias</a></li>
-			<li class="nav-item"><a class="nav-link active" href="sabana.jsp">Sabana de Materias</a></li>
-			<li class="nav-item"><a class="nav-link" href="reportes.jsp">Reportes de Docentes</a></li>
+			<li class="nav-item"><a class="nav-link" href="sabana.jsp">Sabana de Materias</a></li>
+			<li class="nav-item"><a class="nav-link active" href="reportes.jsp">Reportes de Docentes</a></li>
 			<li class="nav-item"><a class="nav-link" href="logout.jsp">Cerrar Sesion</a></li>
 		</ul>
 		<br>
@@ -75,21 +76,18 @@
 			</tr>
 		</table>
 		</div>
-	</div>
-	<br>
-	<div class="container-fluid">
 	<div class="table-responsive">
-	<table border='1' width='100%' class='table'>
+	<table border='1' width='100%' class='table table-bordered'>
 		<thead>
 			<tr>
 				<th>No</th>
-				<th>Clave materia</th>
-				<th>Nombre de la materia</th>
-				<th>Grupo</th>
-				<th>Aula</th>
-				<th>No. Alumnos</th>
-				<th>Carrera</th>
-				<th>Semestre</th>
+				<th>Clave <br>materia</th>
+				<th>Nombre de <br> la materia</th>
+				<th><p class="verticalText">Grupo</p></th>
+				<th><p class="verticalText">Aula</p></th>
+				<th><p class="verticalText">No. Alumnos</p></th>
+				<th><p class="verticalText">Carrera</p></th>
+				<th><p class="verticalText">Semestre</p></th>
 				<th>Lunes</th>
 				<th>Martes</th>
 				<th>Miercoles</th>
@@ -97,7 +95,7 @@
 				<th>Viernes</th>
 				<th>HT</th>
 				<th>HP</th>
-				<th>CRED.</th>
+				<th><p class="verticalText">CRED</p></th>
 			</tr>
 		</thead>
          <tbody>

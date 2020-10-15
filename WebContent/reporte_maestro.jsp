@@ -57,21 +57,19 @@
 			</tr>
 		</table>
 		</div>
-	</div>
-	<br>
-	<div class="container-fluid">
+	
 	<div class="table-responsive">
-	<table border='1' width='100%' class='table'>
+	<table border='1' width='100%' class='table table-bordered'>
 		<thead>
 			<tr>
 				<th>No</th>
 				<th>Clave materia</th>
 				<th>Nombre de la materia</th>
 				<th><p class="verticalText">Grupo</p></th>
-				<th>Aula</th>
-				<th>No. Alumnos</th>
-				<th>Carrera</th>
-				<th>Semestre</th>
+				<th><p class="verticalText">Aula</p></th>
+				<th><p class="verticalText">No. Alumnos</p></th>
+				<th><p class="verticalText">Carrera</p></th>
+				<th><p class="verticalText">Semestre</p></th>
 				<th>Lunes</th>
 				<th>Martes</th>
 				<th>Miercoles</th>
@@ -79,7 +77,7 @@
 				<th>Viernes</th>
 				<th>HT</th>
 				<th>HP</th>
-				<th>CRED.</th>
+				<th><p class="verticalText">CRED</p></th>
 			</tr>
 		</thead>
          <tbody>
