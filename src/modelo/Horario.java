@@ -18,7 +18,7 @@ public class Horario {
 	private String grupo;
 	private int num_alumnos;
 	private int semestre;
-	private int hrs_t, hrs_p;
+	private int hrs_t, hrs_p, hrs_asignadas;
 	private int creditos;
 	private String lunes;
 	private String martes;
@@ -242,6 +242,14 @@ public class Horario {
 
 	public void setPrefijo(String prefijo) {
 		this.prefijo = prefijo;
+	}
+
+	public int getHrs_asignadas() {
+		return hrs_asignadas;
+	}
+
+	public void setHrs_asignadas(int hrs_asignadas) {
+		this.hrs_asignadas = hrs_asignadas;
 	}
 
 	

@@ -24,11 +24,11 @@
 				dispatcher.forward(request, response);
 			}else{
 				int id_user = (int)session_user.getAttribute("id_usuario");
-					
 				Usuario usuario =  UsuarioDAO.getUsuarioById(id_user);
 				List<Horario> list = HorarioDAO.getHorarioByIdUser(id_user); 
 				request.setAttribute("usuario",usuario);
 				request.setAttribute("list",list);
+
 	%>
 	<div class="container" style="margin-top: 20px;">
 		<ul class='nav nav-tabs'>

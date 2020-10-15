@@ -33,6 +33,35 @@ public class HorarioDAO {
 			ps.setString(13,h.getViernes());
 
 			status = ps.executeUpdate();
+			
+			int hrs = 0, creditos = 0;
+			sql = "select creditos from materias where id_materia = ?";
+			PreparedStatement ps2 = con.prepareStatement(sql);
+			ps2.setInt(1, h.getId_materia());
+			ps2.executeQuery();
+			ResultSet rs = ps2.executeQuery();
+			if (rs.next()) {
+				creditos = rs.getInt(1);
+			}
+			
+			sql = "select hrs_trabajo from usuarios where id_usuario = ?";
+			ps2 = con.prepareStatement(sql);
+			ps2.setInt(1, h.getId_usuario());
+			ps2.executeUpdate();
+			rs = ps2.executeQuery();
+			if (rs.next()) {
+				hrs += rs.getInt(1);
+			}
+			
+			hrs = hrs + creditos;
+			
+			//actualizar horas asignadas
+			sql = "update usuarios set hrs_trabajo = ? where id_usuario = ?";
+			ps2 = con.prepareStatement(sql);
+			ps2.setInt(1,hrs);
+			ps2.setInt(2,h.getId_usuario());
+			ps2.executeUpdate();
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -44,6 +73,7 @@ public class HorarioDAO {
 		int status = 0;
 		try {
 			Connection con = Conexion.getConnection();
+			
 			String sql = "update horarios set id_usuario = ?, id_materia = ?, id_carrera = ?, clave_horario = ?, periodo = ?, "
 					+ "grupo = ?, num_alumnos = ?, aula = ?, lunes = ?, martes = ?, miercoles = ?, jueves = ?, viernes = ?"
 					+ " where id_horario = ?";
@@ -75,6 +105,42 @@ public class HorarioDAO {
 		int status = 0;
 		try {
 			Connection con = Conexion.getConnection();
+			//actualizar horas asignadas
+			int hrs = 0, creditos = 0, id_user= 0;
+			String sql = "select materias.creditos from horarios inner join materias on "
+					+ "horarios.id_materia = materias.id_materia where id_horario = ?";
+			PreparedStatement ps2 = con.prepareStatement(sql);
+			ps2.setInt(1, id);
+			ps2.executeQuery();
+			ResultSet rs = ps2.executeQuery();
+			if (rs.next()) {
+				creditos = rs.getInt(1);
+			}
+			
+			sql = "select usuarios.id_usuario, usuarios.hrs_trabajo from horarios inner join usuarios on horarios.id_usuario = usuarios.id_usuario"
+					+ " where id_horario = ?";
+			ps2 = con.prepareStatement(sql);
+			ps2.setInt(1, id);
+			ps2.executeQuery();
+			rs = ps2.executeQuery();
+			if (rs.next()) {
+				id_user = rs.getInt(1);
+				hrs += rs.getInt(2);
+			}
+			
+			if(hrs != 0) {
+				hrs = hrs - creditos;
+			}else {
+				hrs = creditos;
+			}
+			
+			sql = "update usuarios set hrs_trabajo = ? where id_usuario = ?";
+			ps2 = con.prepareStatement(sql);
+			ps2.setInt(1,hrs);
+			ps2.setInt(2,id_user);
+			ps2.executeUpdate();
+			
+			//eliminar registro
 			PreparedStatement ps = con.prepareStatement("delete from horarios where id_horario = ?");
 			ps.setInt(1, id);
 			status = ps.executeUpdate();
