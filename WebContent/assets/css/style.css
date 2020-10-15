@@ -27,8 +27,18 @@
 	margin-left: 0px;
 }
 
+.table .thead-dark th {
+    color: #fff;
+    background: #304670!important;
+	background-color: #304670!important;
+}
+
 .table thead th {
     vertical-align: middle!important;
+}
+
+.table td, .table th {
+    padding: .2rem!important;
 }
 
 .nav-tabs{
