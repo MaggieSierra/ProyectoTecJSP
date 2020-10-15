@@ -144,14 +144,15 @@ public class HorarioDAO {
 		List<Horario> list = new ArrayList<Horario>();
 		try {
 			Connection con = Conexion.getConnection();
-			String sql = "SELECT horarios.*, materias.clave_materia,materias.nombre, materias.semestre, materias.hrs_teoria, materias.hrs_practica, "
-					+ "materias.creditos,carreras.clave_carrera,carreras.nombre, carreras.turno FROM horarios JOIN usuarios ON "
-					+ "usuarios.id_usuario = horarios.id_usuario JOIN materias ON materias.id_materia = horarios.id_materia JOIN carreras "
-					+ "ON carreras.id_carrera = horarios.id_carrera WHERE horarios.id_usuario = ? ORDER BY clave_materia;";
+			String sql = "SELECT horarios.*, usuarios.nombre, usuarios.prefijo, usuarios.primer_apellido, usuarios.segundo_apellido,"
+					+ " materias.clave_materia,materias.nombre, materias.semestre, materias.hrs_teoria, materias.hrs_practica, materias.creditos,"
+					+ "carreras.clave_carrera,carreras.nombre, carreras.turno FROM horarios JOIN usuarios ON usuarios.id_usuario = horarios.id_usuario "
+					+ "JOIN materias ON materias.id_materia = horarios.id_materia JOIN carreras ON carreras.id_carrera = horarios.id_carrera "
+					+ "WHERE horarios.id_usuario = ? ORDER BY clave_horario;";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
+			while (rs.next()) {
 				Horario h = new Horario();
 				h.setId_horario(rs.getInt(1));
 				h.setId_usuario(rs.getInt(2));
@@ -167,19 +168,30 @@ public class HorarioDAO {
 				h.setMiercoles(rs.getString(12));
 				h.setJueves(rs.getString(13));
 				h.setViernes(rs.getString(14));
-				h.setClave_materia(rs.getString(15));
-				h.setNombre_materia(rs.getString(16));
-				h.setSemestre(rs.getInt(17));
-				h.setHrs_t(rs.getInt(18));
-				h.setHrs_p(rs.getInt(19));
-				h.setCreditos(rs.getInt(20));
-				h.setClave_carrera(rs.getString(21));
-				h.setNombre_carrera(rs.getString(22));
-				h.setTurno(rs.getString(23));
+				h.setNombre_usuario(rs.getString(15));
+				h.setPrefijo(rs.getString(16));
+				h.setPrimer_apellido(rs.getString(17));
+				
+				if(rs.getString(17) == null) {
+					h.setSegundo_apellido("");
+				}else {
+					h.setSegundo_apellido(rs.getString(18));
+				}
+				
+				h.setClave_materia(rs.getString(19));
+				h.setNombre_materia(rs.getString(20));
+				h.setSemestre(rs.getInt(21));
+				h.setHrs_t(rs.getInt(22));
+				h.setHrs_p(rs.getInt(23));
+				h.setCreditos(rs.getInt(24));
+				h.setClave_carrera(rs.getString(25));
+				h.setNombre_carrera(rs.getString(26));
+				h.setTurno(rs.getString(27));
+		
 				list.add(h);
 			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 		return list;

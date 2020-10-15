@@ -80,7 +80,6 @@
 	<table border='1' width='100%' class='table table-bordered'>
 		<thead>
 			<tr>
-				<th>No</th>
 				<th>Clave <br>materia</th>
 				<th>Nombre de <br> la materia</th>
 				<th><p class="verticalText">Grupo</p></th>
@@ -105,7 +104,6 @@
 		</c:if>
 		<c:forEach var="reporte" items="${list}">
 			<tr>
-				<td>No</td>
 				<td>${reporte.getClave_materia()}</td>
 				<td>${reporte.getNombre_materia()}</td>
 				<td>${reporte.getGrupo()}</td>

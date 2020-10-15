@@ -29,6 +29,9 @@
 				List<Horario> list = HorarioDAO.getHorarioByIdUser(id_user); 
 				request.setAttribute("usuario",usuario);
 				request.setAttribute("list",list);
+				Iterator it = list.iterator();
+				while(it.hasNext())
+					  System.out.println(it.next());
 	%>
 	<div class="container">
 		<ul class='nav nav-tabs'>
