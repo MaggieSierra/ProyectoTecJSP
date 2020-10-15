@@ -1,0 +1,43 @@
+.contenedor{
+    align-items: center;
+    display: flex!important;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+#img_login{
+	margin-bottom: 20px;
+}
+
+.verticalText{
+	writing-mode: vertical-lr!important;
+	transform: rotate(180deg)!important;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
