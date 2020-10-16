@@ -48,7 +48,7 @@
 					<a style="text-decoration: none; color:white;" href="ingresarMateria.jsp">Nueva Materia</a>
 			</button>
 	        <form class='form-inline' action='materias.jsp' method='get'> 
-	        	<input type='search' name='txtBuscar' class='form-control' style='margin-right:15px;'> 
+	        	<input type='search' name='txtBuscar' class='form-control' style='margin-right:15px;' autocomplete="off"> 
 	        	<input type='submit' name='buscar' class='btn btn-outline-primary' value='Buscar'> 
 	        </form>
 	    </div>

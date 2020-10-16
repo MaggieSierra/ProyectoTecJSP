@@ -381,7 +381,7 @@ public class HorarioDAO {
 					+ " materias.clave_materia,materias.nombre, materias.semestre, materias.hrs_teoria, materias.hrs_practica, materias.creditos,"
 					+ "carreras.clave_carrera,carreras.nombre, carreras.turno FROM horarios JOIN usuarios ON usuarios.id_usuario = horarios.id_usuario "
 					+ "JOIN materias ON materias.id_materia = horarios.id_materia JOIN carreras ON carreras.id_carrera = horarios.id_carrera "
-					+ "WHERE horarios.clave_horario like ? OR materias.clave_materia like ? OR materias.nombre = ? OR usuarios.nombre like ? ORDER BY clave_horario;";
+					+ "WHERE horarios.clave_horario like ? OR materias.clave_materia like ? OR materias.nombre like ? OR usuarios.nombre like ? ORDER BY clave_horario;";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, "%"+texto+"%");
 			ps.setString(2, "%"+texto+"%");

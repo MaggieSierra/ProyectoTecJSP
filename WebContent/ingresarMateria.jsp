@@ -35,7 +35,7 @@
 	%>
 	<div class="container">
 		<ul class='nav nav-tabs'>
-			<li class='nav-item'><a class='nav-link' href='index.html'>Inicio</a></li>
+			<li class='nav-item'><a class='nav-link' href='index.jsp'>Inicio</a></li>
 			<li class="nav-item"><a class="nav-link active" href="materias.jsp">Materias</a></li>
 			<li class="nav-item"><a class="nav-link" href="sabana.jsp">Sabana de Materias</a></li>
 			<li class="nav-item"><a class="nav-link" href="reportes.jsp">Reportes de Docentes</a></li>
